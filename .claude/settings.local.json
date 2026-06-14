@@ -8,7 +8,9 @@
       "PowerShell(\"Node morto\")",
       "PowerShell(if \\(-not \\(Test-Path \"C:\\\\Temp\"\\)\\) { New-Item -ItemType Directory -Path \"C:\\\\Temp\" -Force | Out-Null }; \"C:\\\\Temp existe\")",
       "PowerShell($logPath = \"C:\\\\Temp\\\\next-dev.log\"; Set-Location \"c:\\\\Users\\\\Eloá Paradela\\\\Documents\\\\Site feeh\"; Start-Process -FilePath \"cmd.exe\" -ArgumentList \"/c npm run dev > `\"$logPath`\" 2>&1\" -WorkingDirectory \"c:\\\\Users\\\\Eloá Paradela\\\\Documents\\\\Site feeh\" -WindowStyle Hidden; \"Iniciado\")",
-      "PowerShell(Start-Process \"http://localhost:3000/contato\")"
+      "PowerShell(Start-Process \"http://localhost:3000/contato\")",
+      "PowerShell(New-Item -ItemType Directory -Path \"C:\\\\Users\\\\Elo� Paradela\\\\Documents\\\\Site feeh\\\\public\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Path \"C:\\\\Users\\\\Elo� Paradela\\\\Documents\\\\Site feeh\\\\.github\\\\workflows\" -Force)"
     ]
   }
 }
