@@ -398,7 +398,7 @@ export const pricingPlans: PricingPlan[] = [
     icon: 'truck',
     monthlyPrice: '70,00',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proteção completa para seu caminhão com monitoramento 24 horas e suporte especializado.',
+      'Proteção completa para seu caminhão com monitoramento 24 horas e suporte especializado.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
     whatsappMessage: 'Olá, gostaria de saber mais sobre o rastreamento para Caminhão.',
     learnMoreLink: '/instalacao/caminhao',
@@ -409,7 +409,7 @@ export const pricingPlans: PricingPlan[] = [
     icon: 'van',
     monthlyPrice: '65,00',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Solução ideal para utilitários e vans com tecnologia avançada de rastreamento e alertas em tempo real.',
+      'Solução ideal para utilitários e vans com tecnologia avançada de rastreamento e alertas em tempo real.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
     whatsappMessage: 'Olá, gostaria de saber mais sobre o rastreamento para Utilitário.',
     learnMoreLink: '/instalacao/utilitario',
@@ -420,7 +420,7 @@ export const pricingPlans: PricingPlan[] = [
     icon: 'car',
     monthlyPrice: '60,00',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rastreamento profissional para carros de passeio com app intuitivo e monitoramento contínuo.',
+      'Rastreamento profissional para carros de passeio com app intuitivo e monitoramento contínuo.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
     whatsappMessage: 'Olá, gostaria de saber mais sobre o rastreamento para Carro Leve.',
     learnMoreLink: '/instalacao/carro-leve',
@@ -431,7 +431,7 @@ export const pricingPlans: PricingPlan[] = [
     icon: 'motorcycle',
     monthlyPrice: '60,00',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proteção discreta e eficiente para motos com rastreador de alta precisão e baixo consumo.',
+      'Proteção discreta e eficiente para motos com rastreador de alta precisão e baixo consumo.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
     whatsappMessage: 'Olá, gostaria de saber mais sobre o rastreamento para Moto.',
     learnMoreLink: '/instalacao/moto',
