@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Start-Process \"http://localhost:3000\")",
+      "PowerShell($r = Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -ErrorAction SilentlyContinue; if \\($r\\) { \"Status: $\\($r.StatusCode\\) — Bytes: $\\($r.Content.Length\\)\" } else { \"Servidor não responde\" })",
+      "PowerShell(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force)",
+      "PowerShell(\"Node morto\")",
+      "PowerShell(if \\(-not \\(Test-Path \"C:\\\\Temp\"\\)\\) { New-Item -ItemType Directory -Path \"C:\\\\Temp\" -Force | Out-Null }; \"C:\\\\Temp existe\")",
+      "PowerShell($logPath = \"C:\\\\Temp\\\\next-dev.log\"; Set-Location \"c:\\\\Users\\\\Eloá Paradela\\\\Documents\\\\Site feeh\"; Start-Process -FilePath \"cmd.exe\" -ArgumentList \"/c npm run dev > `\"$logPath`\" 2>&1\" -WorkingDirectory \"c:\\\\Users\\\\Eloá Paradela\\\\Documents\\\\Site feeh\" -WindowStyle Hidden; \"Iniciado\")",
+      "PowerShell(Start-Process \"http://localhost:3000/contato\")"
+    ]
+  }
+}
