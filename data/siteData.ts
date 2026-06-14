@@ -314,57 +314,116 @@ export const appSlides: AppSlide[] = [
 // ─────────────────────────────────────────────
 export const fleetSection = {
   sectionId: 'frotas',
-  sectionLabel: 'Prosat',
+  sectionLabel: 'Soluções para empresas',
+  sectionTitle: 'Prosat Gestão de Frotas',
+  sectionSubtitle:
+    'Nós cuidamos da segurança e do monitoramento dos seus veículos para que você possa focar no que realmente importa: o crescimento do seu negócio.',
   mainTitle: 'Sua frota mais eficiente, seus custos reduzidos.',
   mainDescription:
-    'Gerencie toda a sua frota com visibilidade completa. Soluções de rastreamento para empresas de qualquer porte — do autônomo com um veículo ao transportador com centenas de caminhões.',
+    'Gerencie toda a sua frota com visibilidade completa. Soluções de rastreamento para empresas de qualquer porte.',
   supportPhrase: 'Sua logística mais inteligente começa com visibilidade total. A Prosat entrega isso.',
-  whatsappMessage:
-    'Olá, gostaria de saber mais sobre soluções para frotas.',
+  whatsappMessage: 'Olá, gostaria de saber mais sobre soluções para frotas.',
 }
 
 export const fleetSlides: FleetSlide[] = [
   {
     id: 1,
     number: '01',
-    label: 'Prosat',
-    title: 'Gestão logística',
-    subtitle: 'Gestão de frota',
+    label: 'Gestão de frota',
+    title: 'Gerencie toda a sua frota com visibilidade completa.',
+    subtitle: 'Visibilidade total',
     description:
-      'Gestão de frota não precisa ser complicada. Com a Prosat, você acompanha todos os seus veículos em um único painel — rotas, paradas, consumo e alertas em tempo real.',
+      'Acompanhe todos os seus veículos em um único painel com rotas, paradas, consumo e alertas em tempo real. Gestão de frota sem complicação, do jeito que o seu negócio precisa.',
     image: '/images/fleet/slide-1.jpg',
-    imagePlaceholder: 'Imagem frota — Gestão logística • 900×600',
-    imageAlt: 'Vista aérea de frota de veículos — gestão logística',
+    imagePlaceholder: 'Imagem frota 1 • 900×600',
+    imageAlt: 'Vista aérea de frota de veículos com gestão logística',
     ctaLabel: 'Fale conosco',
     ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
   },
   {
     id: 2,
     number: '02',
-    label: 'Prosat',
-    title: 'Monitoramento de frotas',
+    label: 'Eficiência operacional',
+    title: 'Monitore rotas, reduza custos e aumente a produtividade da sua equipe.',
     subtitle: 'Redução de custos',
     description:
-      'Reduza custos operacionais, evite desvios de rota e aumente a produtividade da sua equipe com dados precisos e relatórios automáticos.',
+      'Cada veículo é um dado. Cada dado é uma economia. Evite desvios de rota, controle o consumo e receba relatórios automáticos para tomar decisões mais rápidas.',
     image: '/images/fleet/slide-2.jpg',
-    imagePlaceholder: 'Imagem frota — Monitoramento • 900×600',
-    imageAlt: 'Monitoramento de frotas em tempo real',
+    imagePlaceholder: 'Imagem frota 2 • 900×600',
+    imageAlt: 'Monitoramento de frotas em tempo real com dados precisos',
     ctaLabel: 'Fale conosco',
     ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
   },
   {
     id: 3,
     number: '03',
-    label: 'Prosat',
-    title: 'Redução de custos operacionais',
+    label: 'Crescimento sem complicação',
+    title: 'Decisões melhores começam com informação em tempo real.',
     subtitle: 'Escalabilidade',
     description:
-      'Seja uma frota de 2 ou 200 veículos, a Prosat tem a solução certa. Escale conforme seu negócio cresce, sem complicação.',
+      'Seja uma frota de 2 ou 200 veículos, a Prosat tem a solução certa. Escale conforme o seu negócio cresce, sem burocracia e sem perder o controle.',
     image: '/images/fleet/slide-3.jpg',
-    imagePlaceholder: 'Imagem frota — Escalabilidade • 900×600',
-    imageAlt: 'Frota de caminhões — escalabilidade',
+    imagePlaceholder: 'Imagem frota 3 • 900×600',
+    imageAlt: 'Frota de caminhões com rastreamento escalável',
     ctaLabel: 'Fale conosco',
     ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
+  },
+]
+
+// ─────────────────────────────────────────────
+// SEÇÃO CLIENTE FINAL — "PROSAT PARA VOCÊ" — 3 SLIDES
+// ─────────────────────────────────────────────
+export const clientSection = {
+  sectionId: 'cliente',
+  sectionLabel: 'Prosat para você',
+  sectionTitle: 'Seu veículo protegido. Sua tranquilidade garantida.',
+  sectionSubtitle: 'Rastreamento inteligente para quem não abre mão de segurança.',
+  mainTitle: 'Segurança 24h na palma da mão.',
+  supportPhrase: 'Com o app Prosat, você não precisa esperar algo acontecer para agir. O sistema te avisa primeiro.',
+}
+
+export const clientSlides: FleetSlide[] = [
+  {
+    id: 1,
+    number: '01',
+    label: 'Segurança 24h',
+    title: 'Onde quer que seu veículo esteja, você sabe.',
+    subtitle: 'Localização em tempo real',
+    description:
+      'Acompanhe a localização do seu veículo a qualquer hora, de qualquer lugar. Receba alertas de ignição, movimentação suspeita e cerca virtual direto no seu celular.',
+    image: '/images/client/slide-1.jpg',
+    imagePlaceholder: 'Prosat para você 1 • 900×600',
+    imageAlt: 'Pessoa monitorando veículo pelo celular com app Prosat',
+    ctaLabel: 'Fale conosco',
+    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de mais informações sobre os planos de rastreamento da Prosat.')}`,
+  },
+  {
+    id: 2,
+    number: '02',
+    label: 'App Prosat',
+    title: 'Com a Prosat, você tem segurança 24h na palma da mão.',
+    subtitle: 'Android e iOS',
+    description:
+      'Com o app Prosat, você não precisa esperar algo acontecer para agir. O sistema te avisa primeiro. Simples de usar e poderoso na prática, disponível para Android e iOS.',
+    image: '/images/client/slide-2.jpg',
+    imagePlaceholder: 'Prosat para você 2 • 900×600',
+    imageAlt: 'App Prosat no celular com mapa de rastreamento',
+    ctaLabel: 'Fale conosco',
+    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de mais informações sobre o app Prosat.')}`,
+  },
+  {
+    id: 3,
+    number: '03',
+    label: 'Para todos',
+    title: 'Do carro à moto, do utilitário ao caminhão. A Prosat tem o plano certo para você.',
+    subtitle: 'Instalação rápida',
+    description:
+      'Seja autônomo, profissional liberal ou empresário: a Prosat tem rastreamento para todos os tipos de veículo, com preço justo e instalação rápida.',
+    image: '/images/client/slide-3.jpg',
+    imagePlaceholder: 'Prosat para você 3 • 900×600',
+    imageAlt: 'Diferentes tipos de veículos com rastreamento Prosat instalado',
+    ctaLabel: 'Ver planos',
+    ctaLink: '#orcamento',
   },
 ]
 
