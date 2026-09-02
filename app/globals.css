@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+/* ══════════════════════════════════════════════════════
+   TRATAMENTO DE COR DAS FOTOS   ← AJUSTE TUDO AQUI
+   ──────────────────────────────────────────────────────
+   Aplicado automaticamente a TODAS as fotos do site (hero,
+   aplicativo, frotas, "Prosat para você", institucional,
+   pop-up de saída e páginas de instalação) para que fiquem
+   com o MESMO padrão estético de cor.
+
+   As caixas tracejadas de placeholder e a logo NÃO são afetadas.
+
+   São 2 camadas independentes:
+
+   1) --photo-filter → filtro nos pixels da foto
+      (saturate, contrast, brightness, sepia, grayscale, hue-rotate…)
+
+   2) --photo-veil → CAMADA SEMI-TRANSPARENTE por cima da foto
+      (a "transparência"). A cor E a força ficam dentro do rgba():
+      os 3 primeiros números = cor, o último (0 a 1) = opacidade.
+      Ex.: rgba(15, 10, 15, 0.35) = preto a 35%  →  foto mais "abafada".
+           rgba(180, 153, 90, 0.25) = dourado a 25%  →  clima quente.
+
+   --photo-veil-blend → como a camada se mistura com a foto:
+      normal     = véu chapado, escurece de forma uniforme (padrão)
+      soft-light = tonaliza de leve mantendo o contraste
+      multiply   = escurece puxando para a cor do véu
+      overlay / color / screen = outras variações
+
+   Para DESLIGAR tudo:  --photo-filter: none;  --photo-veil: transparent;
+══════════════════════════════════════════════════════ */
+:root {
+  --photo-filter: saturate(0.9) contrast(1.03) brightness(0.97) sepia(0.06);
+  --photo-veil: rgba(15, 10, 15, 0.32);
+  --photo-veil-blend: normal;
+}
+
+/* ══════════════════════════════════════
+   TEMA CLARO — padrão
+══════════════════════════════════════ */
+:root,
+[data-theme="light"] {
+  --theme-bg-page:        #F2F2F2;
+  --theme-bg-header:      #ffffff;
+  --theme-bg-nav:         #f8f8f8;
+  --theme-bg-surface:     #ffffff;
+  --theme-bg-card:        #ffffff;
+  --theme-text-primary:   #0F0A0F;
+  --theme-text-link:      rgba(15, 10, 15, 0.65);
+  --theme-text-muted:     #828282;
+  --theme-border:         rgba(180, 153, 90, 0.18);
+  --theme-border-header:  rgba(180, 153, 90, 0.12);
+  --theme-icon:           rgba(15, 10, 15, 0.55);
+  --theme-icon-hover:     #B4995A;
+  --theme-scroll-bg:      #F2F2F2;
+  --theme-scroll-thumb:   #B4995A;
+  --theme-orçamento-bg:   #0F0A0F;
+  --theme-orçamento-text: #F2F2F2;
+}
+
+/* ══════════════════════════════════════
+   TEMA ESCURO — acionado pelo toggle
+══════════════════════════════════════ */
+[data-theme="dark"] {
+  --theme-bg-page:        #0F0A0F;
+  --theme-bg-header:      #0F0A0F;
+  --theme-bg-nav:         rgba(15, 10, 15, 0.95);
+  --theme-bg-surface:     #100c10;
+  --theme-bg-card:        #130e13;
+  --theme-text-primary:   #F2F2F2;
+  --theme-text-link:      rgba(242, 242, 242, 0.75);
+  --theme-text-muted:     #828282;
+  --theme-border:         rgba(180, 153, 90, 0.12);
+  --theme-border-header:  rgba(180, 153, 90, 0.08);
+  --theme-icon:           rgba(255, 255, 255, 0.60);
+  --theme-icon-hover:     #B4995A;
+  --theme-scroll-bg:      #0F0A0F;
+  --theme-scroll-thumb:   #B4995A;
+  --theme-orçamento-bg:   #B4995A;
+  --theme-orçamento-text: #0F0A0F;
+}
+
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--theme-bg-page);
+    color: var(--theme-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ══════════════════════════════════════
+   SCROLLBAR
+══════════════════════════════════════ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--theme-scroll-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--theme-scroll-thumb);
+  border-radius: 3px;
+}
+
+/* ══════════════════════════════════════
+   UTILITÁRIOS DE TEMA — usados nos componentes
+══════════════════════════════════════ */
+@layer components {
+  /* Header */
+  .theme-header-top {
+    background-color: var(--theme-bg-header);
+    border-color: var(--theme-border-header);
+    transition: background-color 0.3s ease;
+  }
+  .theme-header-nav {
+    background-color: var(--theme-bg-nav);
+    border-color: var(--theme-border-header);
+    transition: background-color 0.3s ease;
+  }
+  .theme-nav-link {
+    color: var(--theme-text-link);
+    transition: color 0.2s;
+  }
+  .theme-nav-link:hover { color: #B4995A; }
+
+  .theme-social-icon {
+    color: var(--theme-icon);
+    transition: color 0.2s;
+  }
+  .theme-social-icon:hover { color: var(--theme-icon-hover); }
+
+  .theme-orcamento-btn {
+    background-color: var(--theme-orçamento-bg);
+    color: var(--theme-orçamento-text);
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .theme-orcamento-btn:hover {
+    opacity: 0.88;
+  }
+
+  /* Logo text */
+  .theme-logo-text { color: #B4995A; }
+
+  /* Página com bg do tema */
+  .theme-page-bg {
+    background-color: var(--theme-bg-page);
+    transition: background-color 0.3s ease;
+  }
+
+  /* Seção de pricing */
+  .theme-section-bg {
+    background-color: var(--theme-bg-page);
+    transition: background-color 0.3s ease;
+  }
+  .theme-surface {
+    background-color: var(--theme-bg-surface);
+    transition: background-color 0.3s ease;
+  }
+  .theme-border-color {
+    border-color: var(--theme-border);
+  }
+  .theme-text-primary { color: var(--theme-text-primary); }
+  .theme-text-muted { color: var(--theme-text-muted); }
+
+  /* Toggle button */
+  .theme-toggle-btn {
+    color: var(--theme-icon);
+    transition: color 0.2s;
+  }
+  .theme-toggle-btn:hover { color: #B4995A; }
+
+  /* Focus ring universal */
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #B4995A;
+  }
+
+  /* Tratamento de cor das fotos — aplicado pelo componente SmartImage.
+     Controlado pelas variáveis no bloco "TRATAMENTO DE COR DAS FOTOS" no topo. */
+  .smart-photo {
+    filter: var(--photo-filter);
+  }
+  .smart-photo-veil {
+    position: absolute;
+    inset: 0;
+    background: var(--photo-veil);
+    mix-blend-mode: var(--photo-veil-blend);
+    pointer-events: none;
+  }
+}
