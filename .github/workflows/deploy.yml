@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          PAGES_BASE_PATH: /site-feeh
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

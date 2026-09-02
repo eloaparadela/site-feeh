@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/site-feeh' : ''
+
+// basePath define a "subpasta" em que o site é servido.
+//  - GitHub Pages: o workflow define PAGES_BASE_PATH=/site-feeh
+//  - Hostinger / domínio próprio (raiz): não defina nada -> basePath vazio
+const basePath = process.env.PAGES_BASE_PATH ?? ''
 
 const nextConfig = {
   reactStrictMode: true,
