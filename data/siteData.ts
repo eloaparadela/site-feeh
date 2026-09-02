@@ -148,7 +148,7 @@ export const heroSlides: HeroSlide[] = [
     secondaryButtonLabel: 'WhatsApp de Vendas',
     secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de falar com o time de vendas da Prosat.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
-    tertiaryButtonLink: '#como-ajudar',
+    tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
     externalButtonLabel: '',
     externalButtonLink: '',
@@ -165,7 +165,7 @@ export const heroSlides: HeroSlide[] = [
     secondaryButtonLabel: 'WhatsApp de Vendas',
     secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Caminhão.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
-    tertiaryButtonLink: '#como-ajudar',
+    tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
     externalButtonLabel: '',
     externalButtonLink: '',
@@ -183,7 +183,7 @@ export const heroSlides: HeroSlide[] = [
     secondaryButtonLabel: 'WhatsApp de Vendas',
     secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Carro Leve.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
-    tertiaryButtonLink: '#como-ajudar',
+    tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
     externalButtonLabel: '',
     externalButtonLink: '',
@@ -200,7 +200,7 @@ export const heroSlides: HeroSlide[] = [
     secondaryButtonLabel: 'WhatsApp de Vendas',
     secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Moto.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
-    tertiaryButtonLink: '#como-ajudar',
+    tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
     externalButtonLabel: '',
     externalButtonLink: '',
@@ -234,7 +234,7 @@ export const heroSlides: HeroSlide[] = [
     secondaryButtonLabel: 'WhatsApp de Vendas',
     secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de mais informações sobre os planos da Prosat.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
-    tertiaryButtonLink: '#como-ajudar',
+    tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
     externalButtonLabel: '',
     externalButtonLink: '',
@@ -248,7 +248,7 @@ export const appSection = {
   sectionId: 'aplicativo',
   appStoreLink: 'https://apps.apple.com/',
   googlePlayLink: 'https://play.google.com/',
-  learnMoreLink: '#como-ajudar',
+  learnMoreLink: '/como-podemos-ajudar',
 }
 
 export const appSlides: AppSlide[] = [
@@ -262,7 +262,7 @@ export const appSlides: AppSlide[] = [
     imageAlt: 'App de rastreamento Prosat — tela principal',
     appStoreLink: 'https://apps.apple.com/',
     googlePlayLink: 'https://play.google.com/',
-    learnMoreLink: '#como-ajudar',
+    learnMoreLink: '/como-podemos-ajudar',
   },
   {
     id: 2,
@@ -274,7 +274,7 @@ export const appSlides: AppSlide[] = [
     imageAlt: 'App de rastreamento Prosat — mapa de risco',
     appStoreLink: 'https://apps.apple.com/',
     googlePlayLink: 'https://play.google.com/',
-    learnMoreLink: '#como-ajudar',
+    learnMoreLink: '/como-podemos-ajudar',
   },
   {
     id: 3,
@@ -286,7 +286,7 @@ export const appSlides: AppSlide[] = [
     imageAlt: 'App de rastreamento Prosat — alertas e notificações',
     appStoreLink: 'https://apps.apple.com/',
     googlePlayLink: 'https://play.google.com/',
-    learnMoreLink: '#como-ajudar',
+    learnMoreLink: '/como-podemos-ajudar',
   },
 ]
 

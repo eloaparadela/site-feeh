@@ -43,8 +43,8 @@ export default function AppSection() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ── Imagem: bloco 16:9 no mobile, fundo absoluto no desktop ── */}
-      <div className="relative aspect-video md:aspect-auto md:absolute md:inset-0">
+      {/* ── Imagem: bloco 4:3 no mobile, fundo absoluto no desktop ── */}
+      <div className="relative aspect-[4/3] md:aspect-auto md:absolute md:inset-0">
         {appSlides.map((s, i) => (
           <div
             key={s.id}
@@ -57,7 +57,7 @@ export default function AppSection() {
               src={s.image}
               alt={s.imageAlt}
               fill
-              className="object-cover"
+              className="object-cover object-right md:object-center"
               placeholderText={s.imagePlaceholder}
               placeholderClassName="w-full h-full"
             />

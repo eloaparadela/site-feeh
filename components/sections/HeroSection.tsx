@@ -76,7 +76,7 @@ export default function HeroSection() {
           ÁREA DA IMAGEM — Carrossel deslizante
       ══════════════════════════════════════ */}
       <div
-        className="relative w-full aspect-video md:aspect-auto md:h-[calc(100vh-120px)] overflow-hidden bg-[#0F0A0F] select-none"
+        className="relative w-full h-[64vh] min-h-[460px] md:h-[calc(100vh-120px)] overflow-hidden bg-[#0F0A0F] select-none"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onTouchStart={onTouchStart}
@@ -107,9 +107,9 @@ export default function HeroSection() {
               {/* Overlay escuro — não afeta o header */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#0F0A0F]/80 via-[#0F0A0F]/50 to-[#0F0A0F]/25" />
 
-              {/* Moldura decorativa — apenas desktop */}
+              {/* Moldura decorativa */}
               <div
-                className="hidden md:block absolute inset-x-8 inset-y-6 lg:inset-x-12 lg:inset-y-8 border border-[#B4995A]/18 rounded-[2.5rem] pointer-events-none"
+                className="absolute inset-x-4 inset-y-4 md:inset-x-8 md:inset-y-6 lg:inset-x-12 lg:inset-y-8 border border-[#B4995A]/25 md:border-[#B4995A]/18 rounded-2xl md:rounded-[2.5rem] pointer-events-none"
                 aria-hidden="true"
               />
             </div>
@@ -198,12 +198,12 @@ export default function HeroSection() {
       </div>
 
       {/* ═══════════════════════════════════════
-          TEXTO ABAIXO DA IMAGEM — mobile
+          CARTÃO DE TEXTO SOBRE A IMAGEM — mobile
       ══════════════════════════════════════ */}
-      <div className="md:hidden bg-[#0F0A0F] px-4 py-5">
-        <div className="border-l-4 border-[#B4995A] bg-white/[0.08] p-4 rounded-r">
-          <h1 className="text-base font-bold text-[#F2F2F2] leading-snug mb-2">{slide.title}</h1>
-          <p className="text-sm text-[#F2F2F2]/70 leading-relaxed">{slide.subtitle}</p>
+      <div className="md:hidden bg-[#0F0A0F] px-4 pb-4 flex flex-col">
+        <div className="relative z-20 -mt-20 border-l-4 border-[#B4995A] bg-[#0F0A0F]/85 backdrop-blur-md p-5 rounded-r-lg shadow-2xl shadow-black/50 ring-1 ring-white/10">
+          <h1 className="text-lg font-bold text-[#F2F2F2] leading-snug mb-2">{slide.title}</h1>
+          <p className="text-sm text-[#F2F2F2]/75 leading-relaxed">{slide.subtitle}</p>
         </div>
       </div>
 
