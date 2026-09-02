@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: isProd ? '/prosat' : '',
+  basePath: isProd ? '/site-feeh' : '',
   images: {
     unoptimized: true,
   },
