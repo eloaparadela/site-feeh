@@ -34,6 +34,16 @@ export default function SmartImage({
 }: SmartImageProps) {
   const [failed, setFailed] = useState(false)
 
+  // O next/image não prefixa o basePath no src (só nos assets de _next/).
+  // No GitHub Pages o site fica em /site-feeh/, então precisamos adicionar
+  // o prefixo à mão em caminhos internos (que começam com "/").
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+  const rawSrc = imgProps.src
+  const src =
+    typeof rawSrc === 'string' && rawSrc.startsWith('/') && !rawSrc.startsWith('//')
+      ? `${basePath}${rawSrc}`
+      : rawSrc
+
   if (failed) {
     if (fallback) return <>{fallback}</>
     return (
@@ -57,6 +67,7 @@ export default function SmartImage({
     <>
       <Image
         {...imgProps}
+        src={src}
         className={imgClassName}
         onError={(e) => {
           setFailed(true)
