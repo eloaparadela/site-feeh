@@ -118,7 +118,7 @@ export default function HeroSection() {
 
         {/* ── Bloco de texto + CTAs flutuante — desktop ── */}
         <div className="hidden md:block absolute inset-0 z-10 pointer-events-none">
-          <div className="absolute bottom-16 left-8 lg:left-16 xl:left-24 w-max max-w-[calc(100vw-4rem)] pointer-events-auto">
+          <div className="absolute bottom-10 left-8 lg:left-16 xl:left-24 w-max max-w-[calc(100vw-4rem)] pointer-events-auto">
 
             {/* Cartão de texto */}
             <div className="max-w-[500px] bg-white/60 backdrop-blur-md border-l-4 border-[#B4995A] px-6 py-5 lg:px-7 lg:py-6 shadow-2xl shadow-black/30">
