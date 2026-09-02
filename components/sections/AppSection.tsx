@@ -38,13 +38,13 @@ export default function AppSection() {
   return (
     <section
       id="aplicativo"
-      className="relative min-h-screen flex flex-col bg-onyx"
+      className="relative md:min-h-screen flex flex-col bg-onyx"
       aria-label="Aplicativo Prosat"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ── Imagem de fundo com fade ── */}
-      <div className="absolute inset-0">
+      {/* ── Imagem: bloco 16:9 no mobile, fundo absoluto no desktop ── */}
+      <div className="relative aspect-video md:aspect-auto md:absolute md:inset-0">
         {appSlides.map((s, i) => (
           <div
             key={s.id}
@@ -61,14 +61,14 @@ export default function AppSection() {
               placeholderText={s.imagePlaceholder}
               placeholderClassName="w-full h-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-onyx/60 via-onyx/50 to-onyx/80 md:bg-gradient-to-r md:from-onyx/85 md:via-onyx/50 md:to-onyx/20" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-onyx/40 md:bg-gradient-to-r md:from-onyx/85 md:via-onyx/50 md:to-onyx/20" />
           </div>
         ))}
       </div>
 
       {/* ── Conteúdo ── */}
-      <div className="relative z-10 flex-1 flex items-center">
-        <div className="max-w-[1440px] mx-auto w-full px-4 md:px-8 lg:px-16 py-20 md:py-24">
+      <div className="relative z-10 md:flex-1 flex items-center">
+        <div className="max-w-[1440px] mx-auto w-full px-4 md:px-8 lg:px-16 py-12 md:py-24">
           <div className="max-w-[640px]">
 
             {/* Texto */}

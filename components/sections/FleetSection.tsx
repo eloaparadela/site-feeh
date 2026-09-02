@@ -144,7 +144,7 @@ export default function FleetSection() {
         </div>
 
         {/* ── COLUNA DA IMAGEM (fundo escuro) — altura fixa para consistência entre slides ── */}
-        <div className="lg:w-[58%] relative h-[300px] lg:h-[560px] order-1 lg:order-2 overflow-hidden bg-onyx">
+        <div className="lg:w-[58%] relative aspect-video lg:aspect-auto lg:h-[560px] order-1 lg:order-2 overflow-hidden bg-onyx">
           {/* Imagens com fade */}
           {fleetSlides.map((s, i) => (
             <div

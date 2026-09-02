@@ -55,7 +55,7 @@ export default function ClientSection() {
       <div className="flex flex-col lg:flex-row">
 
         {/* COLUNA DA IMAGEM — esquerda no desktop, topo no mobile */}
-        <div className="lg:w-[55%] relative h-[300px] lg:h-[560px] order-1 overflow-hidden bg-onyx">
+        <div className="lg:w-[55%] relative aspect-video lg:aspect-auto lg:h-[560px] order-1 overflow-hidden bg-onyx">
           {clientSlides.map((s, i) => (
             <div
               key={s.id}

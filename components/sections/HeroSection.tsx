@@ -76,7 +76,7 @@ export default function HeroSection() {
           ÁREA DA IMAGEM — Carrossel deslizante
       ══════════════════════════════════════ */}
       <div
-        className="relative w-full h-[58vh] md:h-[calc(100vh-120px)] overflow-hidden bg-[#0F0A0F] select-none"
+        className="relative w-full aspect-video md:aspect-auto md:h-[calc(100vh-120px)] overflow-hidden bg-[#0F0A0F] select-none"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onTouchStart={onTouchStart}
