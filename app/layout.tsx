@@ -48,8 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <AwayTitleAlert />
           <Header />
-          {/* Mobile: header só tem a faixa superior (64px). Desktop: faixa + nav (64+56=120px) */}
-          <div className="pt-16 lg:pt-[120px]">
+          {/* Mobile: header só tem a faixa superior (96px). Desktop: faixa + nav (96+56=152px) */}
+          <div className="pt-24 lg:pt-[152px]">
             {children}
           </div>
           <Footer />

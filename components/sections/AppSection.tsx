@@ -88,27 +88,21 @@ export default function AppSection() {
                 {slide.description}
               </p>
 
-              {/* Botões de download */}
+              {/* Selos informativos — app não é baixado direto aqui, o link é enviado após a contratação do plano */}
               <div className="flex flex-col sm:flex-row gap-3 mb-5">
-                <a
-                  href={slide.appStoreLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white-smoke px-5 py-3 rounded transition-colors"
-                  aria-label="Baixar na App Store"
+                <div
+                  className="inline-flex items-center gap-3 bg-white/10 border border-white/20 text-white-smoke px-5 py-3 rounded cursor-default"
+                  aria-label="Disponível na App Store"
                 >
                   <AppStoreIcon />
                   <div className="text-left">
-                    <p className="text-[10px] text-white/60 uppercase tracking-wider">Baixar na</p>
+                    <p className="text-[10px] text-white/60 uppercase tracking-wider">Disponível na</p>
                     <p className="text-sm font-semibold leading-none">App Store</p>
                   </div>
-                </a>
+                </div>
 
-                <a
-                  href={slide.googlePlayLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white-smoke px-5 py-3 rounded transition-colors"
+                <div
+                  className="inline-flex items-center gap-3 bg-white/10 border border-white/20 text-white-smoke px-5 py-3 rounded cursor-default"
                   aria-label="Disponível no Google Play"
                 >
                   <PlayStoreIcon />
@@ -116,8 +110,11 @@ export default function AppSection() {
                     <p className="text-[10px] text-white/60 uppercase tracking-wider">Disponível no</p>
                     <p className="text-sm font-semibold leading-none">Google Play</p>
                   </div>
-                </a>
+                </div>
               </div>
+              <p className="text-white/40 text-xs -mt-2 mb-5">
+                O link de acesso ao app é enviado após a contratação do plano.
+              </p>
 
               <a
                 href={slide.learnMoreLink}

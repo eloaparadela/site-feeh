@@ -162,6 +162,12 @@
   /* Logo text */
   .theme-logo-text { color: #B4995A; }
 
+  /* Logo em imagem — troca conforme o tema (arquivo diferente pra cada fundo) */
+  .theme-logo-img-light { display: block; }
+  .theme-logo-img-dark { display: none; }
+  [data-theme="dark"] .theme-logo-img-light { display: none; }
+  [data-theme="dark"] .theme-logo-img-dark { display: block; }
+
   /* Página com bg do tema */
   .theme-page-bg {
     background-color: var(--theme-bg-page);

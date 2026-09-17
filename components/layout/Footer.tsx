@@ -14,10 +14,23 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-4">
               <SmartImage
-                src="/logo-prosat.svg"
+                src="/images/logo/prosat-dark-curto.png"
                 alt="Prosat"
-                width={160}
-                height={44}
+                width={140}
+                height={46}
+                className="theme-logo-img-light h-14 w-auto"
+                fallback={
+                  <span className="font-black text-xl tracking-widest text-[#B4995A] uppercase">
+                    {brand.logoPlaceholder}
+                  </span>
+                }
+              />
+              <SmartImage
+                src="/images/logo/prosat-white-curto.png"
+                alt="Prosat"
+                width={140}
+                height={46}
+                className="theme-logo-img-dark h-14 w-auto"
                 fallback={
                   <span className="font-black text-xl tracking-widest text-[#B4995A] uppercase">
                     {brand.logoPlaceholder}
@@ -98,8 +111,7 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-3">
               {[
-                { label: 'Instagram', href: 'https://instagram.com/prosat' },
-                { label: 'Facebook', href: 'https://facebook.com/prosat' },
+                { label: 'Instagram', href: 'https://www.instagram.com/rastreador_prosat/' },
                 { label: 'WhatsApp', href: `https://wa.me/${whatsapp.number}` },
               ].map((s) => (
                 <a

@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { menuLinks, whatsapp } from '@/data/siteData'
 import SocialIcons from '@/components/ui/SocialIcons'
+import SmartImage from '@/components/ui/SmartImage'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -50,7 +51,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       >
         {/* Header do menu */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-camel/10">
-          <span className="text-camel font-bold text-sm tracking-widest uppercase">Menu</span>
+          <SmartImage src="/images/logo/prosat-white-curto.png" alt="Prosat" width={130} height={44} className="h-9 w-auto" />
+          <span className="sr-only">Menu</span>
           <button
             onClick={onClose}
             className="p-2 text-white/60 hover:text-camel transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-camel rounded"

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import SmartImage from '@/components/ui/SmartImage'
 import { grupoTrackerPage } from '@/data/siteData'
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function GrupoTrackerPage() {
             <ol className="flex items-center gap-2 text-white/40">
               <li><Link href="/" className="hover:text-[#B4995A] transition-colors">Início</Link></li>
               <li aria-hidden="true"><span className="text-[#B4995A]/30">/</span></li>
-              <li className="text-[#B4995A]">O Grupo Tracker</li>
+              <li className="text-[#B4995A]">O Grupo PROSAT</li>
             </ol>
           </nav>
 
@@ -31,17 +30,20 @@ export default function GrupoTrackerPage() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F2F2F2] leading-tight mb-6">
                 {hero.headline}
               </h1>
-              <p className="text-[#B4995A] font-semibold text-base md:text-lg mb-4 leading-snug">
+              <p className="text-[#F2F2F2] font-semibold text-base md:text-lg mb-4 leading-snug">
                 {hero.subheadline}
               </p>
               <p className="text-[#828282] leading-relaxed mb-8">
                 {hero.description}
               </p>
               <Link
-                href={cta.buttonLink}
-                className="inline-flex items-center justify-center bg-[#B4995A] hover:bg-[#C8AF72] text-[#0F0A0F] font-bold text-sm px-6 py-3 rounded transition-colors"
+                href={hero.buttonLink}
+                className="inline-flex items-center justify-center gap-2 bg-[#B4995A] hover:bg-[#C8AF72] text-[#0F0A0F] font-bold text-sm px-6 py-3 rounded transition-colors"
               >
-                {cta.buttonLabel}
+                {hero.buttonLabel}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </div>
@@ -77,29 +79,14 @@ export default function GrupoTrackerPage() {
         </div>
 
         {/* ── Texto sobre a empresa ── */}
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <div className="lg:w-1/2">
-            <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden">
-              <SmartImage
-                src="/images/institucional/equipe-sede.jpg"
-                alt="Foto da equipe e sede da Prosat"
-                fill
-                className="object-cover"
-                placeholderText="Foto da equipe / sede • 700×450"
-                placeholderClassName="w-full h-full"
-                placeholderDark={false}
-              />
-            </div>
-          </div>
-          <div className="lg:w-1/2">
-            <span className="w-1 h-8 bg-[#B4995A] rounded-full inline-block mb-5" aria-hidden="true" />
-            <h2 className="theme-text-primary text-2xl md:text-3xl font-bold mb-5 leading-tight">
-              {about.headline}
-            </h2>
-            <p className="theme-text-muted leading-relaxed">
-              {about.body}
-            </p>
-          </div>
+        <div className="max-w-2xl mx-auto text-center">
+          <span className="w-10 h-1 bg-[#B4995A] rounded-full inline-block mb-5" aria-hidden="true" />
+          <h2 className="theme-text-primary text-2xl md:text-3xl font-bold mb-5 leading-tight">
+            {about.headline}
+          </h2>
+          <p className="theme-text-muted leading-relaxed">
+            {about.body}
+          </p>
         </div>
       </div>
 

@@ -3,7 +3,6 @@ import AppSection from '@/components/sections/AppSection'
 import ClientSection from '@/components/sections/ClientSection'
 import FleetSection from '@/components/sections/FleetSection'
 import PricingSection from '@/components/sections/PricingSection'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import ExitIntentPopup from '@/components/modals/ExitIntentPopup'
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
       <ClientSection />
       <FleetSection />
       <PricingSection />
-      <TestimonialsSection />
       <ExitIntentPopup />
     </main>
   )

@@ -87,10 +87,10 @@ export interface ExitPopupVariant {
 export const brand = {
   name: 'Prosat',
   tagline: 'Sistema de Rastreamento',
-  logoPlaceholder: 'LOGO',
+  logoPlaceholder: 'PROSAT',
   copyright: '© 2025 Prosat Sistema de Rastreamento. Todos os direitos reservados.',
   legalText:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Os valores podem sofrer alteração de acordo com seu perfil e localização. Consulte nossos termos e condições antes de contratar.',
+    'Acompanhe seu veículo em tempo real, direto pelo celular. Tenha mais controle, praticidade e tranquilidade no seu dia a dia.',
 }
 
 // ─────────────────────────────────────────────
@@ -98,7 +98,7 @@ export const brand = {
 // ─────────────────────────────────────────────
 export const menuLinks = [
   { label: 'Home', href: '/' },
-  { label: 'O Grupo Tracker', href: '/o-grupo-tracker' },
+  { label: 'O Grupo PROSAT', href: '/o-grupo-tracker' },
   { label: 'Como podemos ajudar?', href: '/como-podemos-ajudar' },
   { label: 'Seja parceiro', href: '/seja-parceiro' },
   { label: 'Contato', href: '/contato' },
@@ -108,17 +108,14 @@ export const menuLinks = [
 // REDES SOCIAIS
 // ─────────────────────────────────────────────
 export const socialLinks = {
-  instagram: 'https://instagram.com/prosat',
-  facebook: 'https://facebook.com/prosat',
-  linkedin: 'https://linkedin.com/company/prosat',
-  youtube: 'https://youtube.com/@prosat',
+  instagram: 'https://www.instagram.com/rastreador_prosat/',
 }
 
 // ─────────────────────────────────────────────
 // WHATSAPP
 // ─────────────────────────────────────────────
 export const whatsapp = {
-  number: '5500000000000',
+  number: '5511959200609',
   defaultMessage: 'Olá, gostaria de mais informações sobre os planos de rastreamento da Prosat.',
   salesMessage: 'Olá, gostaria de falar com o time de vendas da Prosat.',
   fleetMessage: 'Olá, gostaria de saber mais sobre soluções para frotas.',
@@ -146,7 +143,7 @@ export const heroSlides: HeroSlide[] = [
     primaryButtonLabel: 'Cotação Online',
     primaryButtonLink: '#orcamento',
     secondaryButtonLabel: 'WhatsApp de Vendas',
-    secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de falar com o time de vendas da Prosat.')}`,
+    secondaryButtonLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de falar com o time de vendas da Prosat.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
     tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
@@ -163,7 +160,7 @@ export const heroSlides: HeroSlide[] = [
     primaryButtonLabel: 'Cotação Online',
     primaryButtonLink: '#orcamento',
     secondaryButtonLabel: 'WhatsApp de Vendas',
-    secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Caminhão.')}`,
+    secondaryButtonLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Caminhão.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
     tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
@@ -181,7 +178,7 @@ export const heroSlides: HeroSlide[] = [
     primaryButtonLabel: 'Cotação Online',
     primaryButtonLink: '#orcamento',
     secondaryButtonLabel: 'WhatsApp de Vendas',
-    secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Carro Leve.')}`,
+    secondaryButtonLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Carro Leve.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
     tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
@@ -198,7 +195,7 @@ export const heroSlides: HeroSlide[] = [
     primaryButtonLabel: 'Cotação Online',
     primaryButtonLink: '#orcamento',
     secondaryButtonLabel: 'WhatsApp de Vendas',
-    secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Moto.')}`,
+    secondaryButtonLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre o rastreamento para Moto.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
     tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
@@ -215,7 +212,7 @@ export const heroSlides: HeroSlide[] = [
     primaryButtonLabel: 'Cotação Online',
     primaryButtonLink: '#orcamento',
     secondaryButtonLabel: 'WhatsApp de Vendas',
-    secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
+    secondaryButtonLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
     tertiaryButtonLabel: 'Soluções para Frotas',
     tertiaryButtonLink: '#frotas',
     hasExternalButton: false,
@@ -232,7 +229,7 @@ export const heroSlides: HeroSlide[] = [
     primaryButtonLabel: 'Ver Planos',
     primaryButtonLink: '#orcamento',
     secondaryButtonLabel: 'WhatsApp de Vendas',
-    secondaryButtonLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de mais informações sobre os planos da Prosat.')}`,
+    secondaryButtonLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de mais informações sobre os planos da Prosat.')}`,
     tertiaryButtonLabel: 'Saiba Mais',
     tertiaryButtonLink: '/como-podemos-ajudar',
     hasExternalButton: false,
@@ -319,7 +316,7 @@ export const fleetSlides: FleetSlide[] = [
     imagePlaceholder: 'Imagem frota 1 • 900×600',
     imageAlt: 'Vista aérea de frota de veículos com gestão logística',
     ctaLabel: 'Fale conosco',
-    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
+    ctaLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
   },
   {
     id: 2,
@@ -333,7 +330,7 @@ export const fleetSlides: FleetSlide[] = [
     imagePlaceholder: 'Imagem frota 2 • 900×600',
     imageAlt: 'Monitoramento de frotas em tempo real com dados precisos',
     ctaLabel: 'Fale conosco',
-    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
+    ctaLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
   },
   {
     id: 3,
@@ -347,7 +344,7 @@ export const fleetSlides: FleetSlide[] = [
     imagePlaceholder: 'Imagem frota 3 • 900×600',
     imageAlt: 'Frota de caminhões com rastreamento escalável',
     ctaLabel: 'Fale conosco',
-    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
+    ctaLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de saber mais sobre soluções para frotas.')}`,
   },
 ]
 
@@ -376,7 +373,7 @@ export const clientSlides: FleetSlide[] = [
     imagePlaceholder: 'Prosat para você 1 • 900×600',
     imageAlt: 'Pessoa monitorando veículo pelo celular com app Prosat',
     ctaLabel: 'Fale conosco',
-    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de mais informações sobre os planos de rastreamento da Prosat.')}`,
+    ctaLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de mais informações sobre os planos de rastreamento da Prosat.')}`,
   },
   {
     id: 2,
@@ -390,7 +387,7 @@ export const clientSlides: FleetSlide[] = [
     imagePlaceholder: 'Prosat para você 2 • 900×600',
     imageAlt: 'App Prosat no celular com mapa de rastreamento',
     ctaLabel: 'Fale conosco',
-    ctaLink: `https://wa.me/5500000000000?text=${encodeURIComponent('Olá, gostaria de mais informações sobre o app Prosat.')}`,
+    ctaLink: `https://wa.me/5511959200609?text=${encodeURIComponent('Olá, gostaria de mais informações sobre o app Prosat.')}`,
   },
   {
     id: 3,
@@ -436,7 +433,7 @@ export const pricingPlans: PricingPlan[] = [
     id: 'caminhao',
     vehicleType: 'Caminhão',
     icon: 'truck',
-    monthlyPrice: '70,00',
+    monthlyPrice: '69,90',
     description:
       'Proteção completa para seu caminhão com monitoramento 24 horas e suporte especializado.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
@@ -458,7 +455,7 @@ export const pricingPlans: PricingPlan[] = [
     id: 'carro-leve',
     vehicleType: 'Carro Leve',
     icon: 'car',
-    monthlyPrice: '60,00',
+    monthlyPrice: '59,90',
     description:
       'Rastreamento profissional para carros de passeio com app intuitivo e monitoramento contínuo.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
@@ -469,7 +466,7 @@ export const pricingPlans: PricingPlan[] = [
     id: 'moto',
     vehicleType: 'Moto',
     icon: 'motorcycle',
-    monthlyPrice: '60,00',
+    monthlyPrice: '49,90',
     description:
       'Proteção discreta e eficiente para motos com rastreador de alta precisão e baixo consumo.',
     installationNote: 'Instalação: R$ 100,00 (SP) • R$ 120,00 (outros estados)',
@@ -540,7 +537,7 @@ export const testimonials: Testimonial[] = [
     id: 7,
     stars: 5,
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilidade no uso do aplicativo e monitoramento preciso. Instalação rápida e atendimento nota 10.',
+      'O aplicativo é muito fácil de usar e o monitoramento é preciso. Instalação rápida e atendimento nota 10.',
     name: 'Paulo Rodrigues',
     role: 'Autônomo',
     city: 'Rio de Janeiro, RJ',
@@ -549,7 +546,7 @@ export const testimonials: Testimonial[] = [
     id: 8,
     stars: 5,
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contratei para minha frota de utilitários e a diferença foi imediata. Controle total na palma da mão.',
+      'Contratei para a minha frota de utilitários e a diferença foi imediata. Controle total na palma da mão.',
     name: 'Camila Ferreira',
     role: 'Empresária',
     city: 'Goiânia, GO',
@@ -558,7 +555,7 @@ export const testimonials: Testimonial[] = [
     id: 9,
     stars: 5,
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Minha moto é minha ferramenta de trabalho. Com a Prosat, posso trabalhar tranquilo sabendo que está sempre monitorada.',
+      'Minha moto é minha ferramenta de trabalho. Com a Prosat, posso trabalhar tranquilo sabendo que está sempre monitorada.',
     name: 'Diego Santos',
     role: 'Motorista de App',
     city: 'Salvador, BA',
@@ -585,7 +582,7 @@ export const exitPopupVariants: ExitPopupVariant[] = [
   {
     id: 'direta',
     isDefault: false,
-    title: 'Proteção veicular a partir de R$ 59,90/mês.',
+    title: 'Rastreamento veicular a partir de R$ 49,90/mês.',
     description: 'Preencha seus dados e receba uma proposta personalizada.',
   },
 ]
@@ -594,7 +591,7 @@ export const exitPopupVariants: ExitPopupVariant[] = [
 // LINKS DO FOOTER
 // ─────────────────────────────────────────────
 export const footerLinks = [
-  { label: 'O Grupo Tracker', href: '/o-grupo-tracker' },
+  { label: 'O Grupo PROSAT', href: '/o-grupo-tracker' },
   { label: 'Como podemos ajudar?', href: '/como-podemos-ajudar' },
   { label: 'Seja parceiro', href: '/seja-parceiro' },
   { label: 'Contato', href: '/contato' },
@@ -623,14 +620,16 @@ export const appStoreLinks = {
 // ─────────────────────────────────────────────
 export const grupoTrackerPage = {
   meta: {
-    title: 'O Grupo Tracker — Prosat',
-    description: 'Conheça o Grupo Tracker, especialista em rastreamento veicular com mais de 15 anos protegendo veículos em todo o Brasil.',
+    title: 'O Grupo PROSAT',
+    description: 'Conheça a PROSAT, especialista em rastreamento veicular com mais de 15 anos protegendo veículos em todo o Brasil.',
   },
   hero: {
     label: 'Quem somos',
     headline: 'Tecnologia e confiança a serviço da sua segurança.',
-    subheadline: 'O Grupo Tracker lidera o mercado de rastreamento veicular no Brasil há mais de uma década.',
-    description: 'Nascemos com um propósito claro: oferecer proteção veicular acessível, confiável e eficiente para todos os perfis de clientes — do autônomo com uma moto ao transportador com centenas de caminhões.',
+    subheadline: 'A PROSAT é um sistema de rastreamento veicular, que te mantém sempre um passo à frente, com localização em tempo real e muito mais controle sobre o seu veículo.',
+    description: 'Nosso sistema permite monitorar a localização do seu veículo de forma prática e confiável, direto pelo celular.',
+    buttonLabel: 'Conheça nosso rastreamento',
+    buttonLink: '/#orcamento',
   },
   blocks: [
     {
@@ -653,7 +652,7 @@ export const grupoTrackerPage = {
   ],
   about: {
     headline: 'Mais do que rastreamento — uma parceria de confiança.',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A Prosat combina tecnologia de ponta, atendimento humanizado e planos acessíveis para que qualquer pessoa possa proteger seu veículo sem abrir mão da qualidade. Nossa equipe está presente em todo o território nacional, com suporte ágil e estrutura para atender desde o cliente individual até grandes frotas corporativas.',
+    body: 'A Prosat combina tecnologia de ponta, atendimento humanizado e planos acessíveis para que qualquer pessoa possa proteger seu veículo sem abrir mão da qualidade. Nossa equipe está presente em todo o território nacional, com suporte ágil e estrutura para atender desde o cliente individual até grandes frotas corporativas.',
   },
   cta: {
     headline: 'Faça parte da família Prosat.',
@@ -683,7 +682,7 @@ export const comoAjudarPage = {
       description: 'Rastreamento profissional para carros de passeio com app intuitivo, alertas em tempo real e monitoramento contínuo 24 horas.',
       link: '/instalacao/carro-leve',
       linkLabel: 'Ver plano',
-      price: 'A partir de R$ 60/mês',
+      price: 'A partir de R$ 59,90/mês',
     },
     {
       icon: 'motorcycle' as const,
@@ -691,7 +690,7 @@ export const comoAjudarPage = {
       description: 'Proteção discreta e eficiente para motos com rastreador de alta precisão, baixo consumo e recuperação ágil em caso de furto.',
       link: '/instalacao/moto',
       linkLabel: 'Ver plano',
-      price: 'A partir de R$ 60/mês',
+      price: 'A partir de R$ 49,90/mês',
     },
     {
       icon: 'truck' as const,
@@ -699,7 +698,7 @@ export const comoAjudarPage = {
       description: 'Monitoramento 24h com suporte especializado para caminhões. Proteção completa para quem depende da carga para trabalhar.',
       link: '/instalacao/caminhao',
       linkLabel: 'Ver plano',
-      price: 'A partir de R$ 70/mês',
+      price: 'A partir de R$ 69,90/mês',
     },
     {
       icon: 'van' as const,
@@ -707,7 +706,7 @@ export const comoAjudarPage = {
       description: 'Solução ideal para utilitários, vans e veículos de trabalho. Controle de rota, alertas automáticos e relatórios em tempo real.',
       link: '/instalacao/utilitario',
       linkLabel: 'Ver plano',
-      price: 'A partir de R$ 65/mês',
+      price: 'A partir de R$ 65,00/mês',
     },
     {
       icon: 'fleet' as const,
@@ -814,19 +813,19 @@ export const installationPages: Record<string, InstallationPageContent> = {
     heroTitleLine: 'Rastreamento para',
     heroTitleHighlight: 'Caminhão',
     heroDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Rastreamento profissional pensado para quem depende da carga para trabalhar. Acompanhe a localização do seu caminhão em tempo real, receba alertas de rota e tenha a tranquilidade de saber onde seu veículo está a qualquer momento.',
     image: {
       src: '/images/instalacao/caminhao.jpg',
       alt: 'Caminhão com rastreador instalado',
       placeholderText: 'Imagem caminhão com rastreador • 700×450',
     },
     features: [
-      { title: 'Instalação rápida', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Processo ágil e sem burocracia.' },
-      { title: 'Monitoramento 24h', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seu caminhão protegido em tempo real.' },
-      { title: 'Suporte especializado', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Equipe técnica disponível quando você precisar.' },
+      { title: 'Instalação rápida', description: 'Equipe técnica especializada realiza a instalação sem burocracia, com o mínimo de tempo parado do seu veículo.' },
+      { title: 'Monitoramento 24h', description: 'O rastreador acompanha seu caminhão dia e noite, com localização atualizada em tempo real direto no app.' },
+      { title: 'Suporte especializado', description: 'Conte com uma equipe que entende do seu negócio para tirar dúvidas e ajudar sempre que precisar.' },
     ],
     ctaTitle: 'Pronto para proteger seu caminhão?',
-    ctaDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Entre em contato e receba uma proposta personalizada.',
+    ctaDescription: 'Fale com a gente e receba uma proposta personalizada para o seu caminhão ou para a sua frota.',
   },
   utilitario: {
     vehicleType: 'Utilitário',
@@ -838,19 +837,19 @@ export const installationPages: Record<string, InstallationPageContent> = {
     heroTitleLine: 'Rastreamento para',
     heroTitleHighlight: 'Utilitário',
     heroDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Solução de rastreamento feita para quem usa o utilitário como ferramenta de trabalho. Monitore a localização, acompanhe rotas e mantenha o controle total da sua operação.',
     image: {
       src: '/images/instalacao/utilitario.jpg',
       alt: 'Utilitário com rastreador instalado',
       placeholderText: 'Imagem utilitário com rastreador • 700×450',
     },
     features: [
-      { title: 'Instalação rápida', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Processo ágil e sem burocracia.' },
-      { title: 'Monitoramento 24h', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seu utilitário protegido em tempo real.' },
-      { title: 'Gestão de frota', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Controle múltiplos veículos em um painel.' },
+      { title: 'Instalação rápida', description: 'Processo ágil, sem burocracia e com pouquíssimo tempo de veículo parado.' },
+      { title: 'Monitoramento 24h', description: 'Seu utilitário rastreado o tempo todo, com localização em tempo real pelo aplicativo.' },
+      { title: 'Gestão de frota', description: 'Acompanhe um ou vários veículos no mesmo painel, com relatórios simples e objetivos.' },
     ],
     ctaTitle: 'Pronto para proteger seu utilitário?',
-    ctaDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    ctaDescription: 'Fale com a gente e receba uma proposta personalizada para o seu utilitário ou para a sua frota.',
   },
   'carro-leve': {
     vehicleType: 'Carro Leve',
@@ -862,19 +861,19 @@ export const installationPages: Record<string, InstallationPageContent> = {
     heroTitleLine: 'Rastreamento para',
     heroTitleHighlight: 'Carro Leve',
     heroDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Rastreamento pensado para o seu dia a dia. Tenha a localização do seu carro sempre à mão, com um aplicativo simples e alertas que avisam qualquer movimentação fora do comum.',
     image: {
       src: '/images/instalacao/carro-leve.jpg',
       alt: 'Carro leve com rastreador instalado',
       placeholderText: 'Imagem carro leve com rastreador • 700×450',
     },
     features: [
-      { title: 'Rastreador discreto', description: 'Lorem ipsum dolor sit amet. Instalação profissional e invisível.' },
-      { title: 'App completo', description: 'Lorem ipsum dolor sit amet. Acompanhe tudo pelo celular em tempo real.' },
-      { title: 'Alertas automáticos', description: 'Lorem ipsum dolor sit amet. Notificações de ignição, cerca virtual e mais.' },
+      { title: 'Rastreador discreto', description: 'Instalação profissional, sem alterar a aparência ou o funcionamento do seu carro.' },
+      { title: 'App completo', description: 'Acompanhe a localização e o histórico de trajetos direto no celular.' },
+      { title: 'Alertas automáticos', description: 'Notificações de ignição, cerca virtual e movimentação suspeita em tempo real.' },
     ],
     ctaTitle: 'Pronto para proteger seu carro?',
-    ctaDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    ctaDescription: 'Fale com a gente e receba uma proposta personalizada para o seu carro.',
   },
   moto: {
     vehicleType: 'Moto',
@@ -886,19 +885,19 @@ export const installationPages: Record<string, InstallationPageContent> = {
     heroTitleLine: 'Rastreamento para',
     heroTitleHighlight: 'Moto',
     heroDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Proteção discreta e eficiente pensada para a rotina de quem anda de moto. Rastreador de alta precisão, fácil de instalar e pronto para te avisar em caso de movimentação fora do comum.',
     image: {
       src: '/images/instalacao/moto.jpg',
       alt: 'Moto com rastreador instalado',
       placeholderText: 'Imagem moto com rastreador • 700×450',
     },
     features: [
-      { title: 'Alta precisão', description: 'Lorem ipsum dolor sit amet. Rastreador de precisão específico para motos.' },
-      { title: 'Baixo consumo', description: 'Lorem ipsum dolor sit amet. Tecnologia que não drena a bateria da sua moto.' },
-      { title: 'Recuperação rápida', description: 'Lorem ipsum dolor sit amet. Central de operações 24h para recuperação veicular.' },
+      { title: 'Alta precisão', description: 'Localização exata da sua moto, mesmo em áreas urbanas com muitos obstáculos.' },
+      { title: 'Baixo consumo', description: 'Tecnologia pensada para não pesar na bateria da moto, com autonomia prolongada.' },
+      { title: 'Recuperação rápida', description: 'Em caso de furto, nossa equipe te ajuda a acionar a recuperação com agilidade.' },
     ],
     ctaTitle: 'Pronto para proteger sua moto?',
-    ctaDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    ctaDescription: 'Fale com a gente e receba uma proposta personalizada para a sua moto.',
   },
 }
 
@@ -913,14 +912,13 @@ export const contatoPagina = {
   hero: {
     label: 'Fale conosco',
     headline: 'Estamos prontos para ajudar.',
-    description: 'Nossa equipe de atendimento está disponível de segunda a sexta, das 8h às 18h, e pelo WhatsApp a qualquer hora.',
+    description: 'Nossa equipe de atendimento está disponível de segunda a sexta, das 8h às 18h.',
   },
   info: {
-    phone: '0800 000 0000',
-    whatsappDisplay: '(00) 00000-0000',
-    email: 'contato@prosat.com.br',
+    whatsappDisplay: '(11) 95920-0609',
+    email: 'prosat.rastreamentobr@gmail.com',
     address: 'São Paulo, SP — Brasil',
-    hours: 'Seg–Sex: 8h às 18h | Plantão WhatsApp: 24h',
+    hours: 'Seg–Sex: 8h às 18h',
   },
   form: {
     headline: 'Envie uma mensagem',

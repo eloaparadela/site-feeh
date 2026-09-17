@@ -3,142 +3,27 @@
 import { type PricingPlan } from '@/data/siteData'
 import { whatsapp } from '@/data/siteData'
 import Link from 'next/link'
+import SmartImage from '@/components/ui/SmartImage'
 
-function TruckIcon() {
-  return (
-    <svg viewBox="0 0 56 36" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" className="w-14 h-9" aria-hidden="true">
-      {/* Carroceria / trailer */}
-      <rect x="17" y="5" width="36" height="20" rx="1.5" />
-      {/* Cabine */}
-      <path d="M2 25 L2 13 L7 5 L17 5 L17 25" />
-      {/* Para-brisa (preenchimento suave) */}
-      <path d="M3.5 16.5 L7 7 L17 7 L17 16.5 Z" fill="currentColor" fillOpacity="0.15" stroke="none" />
-      {/* Para-brisa borda */}
-      <path d="M3.5 16.5 L7 7 L17 7 L17 16.5" />
-      {/* Escapamento */}
-      <line x1="9.5" y1="5" x2="9.5" y2="1.5" strokeWidth={2} />
-      {/* Chassi */}
-      <line x1="2" y1="25" x2="53" y2="25" strokeWidth={1.4} />
-      {/* Rodas */}
-      <circle cx="9" cy="29" r="4.5" />
-      <circle cx="34" cy="29" r="4.5" />
-      <circle cx="44" cy="29" r="4.5" />
-      {/* Cubos */}
-      <circle cx="9" cy="29" r="1.3" fill="currentColor" />
-      <circle cx="34" cy="29" r="1.3" fill="currentColor" />
-      <circle cx="44" cy="29" r="1.3" fill="currentColor" />
-      {/* Divisória cabine-carroceria */}
-      <line x1="17" y1="5" x2="17" y2="25" />
-    </svg>
-  )
-}
-
-function VanIcon() {
-  return (
-    <svg viewBox="0 0 56 36" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" className="w-14 h-9" aria-hidden="true">
-      {/* Corpo principal */}
-      <path d="M3 25 L3 9 L9 4 L51 4 L53 8 L53 25" />
-      {/* Para-brisa inclinado */}
-      <path d="M5 19 L9 5 L22 5 L22 19" />
-      {/* Para-brisa preenchido */}
-      <path d="M5 19 L9 5 L22 5 L22 19 Z" fill="currentColor" fillOpacity="0.13" stroke="none" />
-      {/* Janela lateral dianteira */}
-      <rect x="24" y="7" width="9" height="9" rx="1" />
-      <rect x="24" y="7" width="9" height="9" rx="1" fill="currentColor" fillOpacity="0.12" stroke="none" />
-      {/* Janela lateral traseira */}
-      <rect x="35" y="7" width="9" height="9" rx="1" />
-      <rect x="35" y="7" width="9" height="9" rx="1" fill="currentColor" fillOpacity="0.12" stroke="none" />
-      {/* Divisória (porta deslizante) */}
-      <line x1="22" y1="5" x2="22" y2="25" strokeWidth={1.4} />
-      {/* Chassi */}
-      <line x1="3" y1="25" x2="53" y2="25" strokeWidth={1.4} />
-      {/* Rodas */}
-      <circle cx="13" cy="29" r="4.5" />
-      <circle cx="43" cy="29" r="4.5" />
-      {/* Cubos */}
-      <circle cx="13" cy="29" r="1.3" fill="currentColor" />
-      <circle cx="43" cy="29" r="1.3" fill="currentColor" />
-    </svg>
-  )
-}
-
-function CarIcon() {
-  return (
-    <svg viewBox="0 0 56 34" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" className="w-14 h-9" aria-hidden="true">
-      {/* Corpo inferior */}
-      <path d="M2 22 L3 17 L8 17 L50 17 L53 22" />
-      {/* Teto e para-brisa */}
-      <path d="M9 17 L14 8 L40 8 L46 17" />
-      {/* Pilar A (dianteiro) */}
-      <line x1="14" y1="8" x2="14" y2="17" />
-      {/* Pilar B (central) */}
-      <line x1="28" y1="8.5" x2="28" y2="17" strokeWidth={1.4} />
-      {/* Pilar C (traseiro) */}
-      <line x1="40" y1="8" x2="40" y2="17" />
-      {/* Para-brisa dianteiro (preenchido) */}
-      <path d="M14.5 8.5 L14.5 17 L28 17 L28 8.5 Z" fill="currentColor" fillOpacity="0.13" stroke="none" />
-      {/* Vidro traseiro (preenchido) */}
-      <path d="M28.5 8.5 L28.5 17 L39.5 17 L39.5 8.5 Z" fill="currentColor" fillOpacity="0.13" stroke="none" />
-      {/* Capô */}
-      <path d="M50 17 L54 17 L53 22" strokeWidth={1.4} />
-      {/* Porta-malas */}
-      <path d="M2 22 L3 17" strokeWidth={1.4} />
-      {/* Chassi */}
-      <line x1="6" y1="22" x2="50" y2="22" strokeWidth={1.4} />
-      {/* Rodas */}
-      <circle cx="14" cy="26" r="4.5" />
-      <circle cx="41" cy="26" r="4.5" />
-      {/* Cubos */}
-      <circle cx="14" cy="26" r="1.3" fill="currentColor" />
-      <circle cx="41" cy="26" r="1.3" fill="currentColor" />
-    </svg>
-  )
-}
-
-function MotorcycleIcon() {
-  return (
-    <svg viewBox="0 0 56 40" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" className="w-14 h-9" aria-hidden="true">
-      {/* Garfo dianteiro */}
-      <path d="M15 21 L10 32" />
-      {/* Braço traseiro (swing arm) */}
-      <path d="M38 23 L44 32" />
-      {/* Quadro principal */}
-      <path d="M16 21 L22 14 L34 14 L40 23" />
-      {/* Tanque de combustível */}
-      <path d="M22 14 L24 10 L32 10 L34 14" />
-      {/* Tanque preenchido */}
-      <path d="M22 14 L24 10 L32 10 L34 14 Z" fill="currentColor" fillOpacity="0.15" stroke="none" />
-      {/* Motor / bloco */}
-      <rect x="23" y="18" width="12" height="9" rx="1.5" />
-      <rect x="23" y="18" width="12" height="9" rx="1.5" fill="currentColor" fillOpacity="0.12" stroke="none" />
-      {/* Assento */}
-      <path d="M26 13.5 L36 13 L40 15" strokeWidth={1.4} />
-      {/* Guidão */}
-      <path d="M15 21 L15 15 L10 14 M15 15 L20 13.5" />
-      {/* Escapamento */}
-      <path d="M35 25 L43 28 L48 28" />
-      {/* Roda dianteira */}
-      <circle cx="10" cy="34" r="6" />
-      {/* Roda traseira */}
-      <circle cx="44" cy="34" r="6" />
-      {/* Cubos */}
-      <circle cx="10" cy="34" r="1.5" fill="currentColor" />
-      <circle cx="44" cy="34" r="1.5" fill="currentColor" />
-      {/* Raios dianteiros (simplificados) */}
-      <line x1="10" y1="28" x2="10" y2="34" strokeWidth={1} />
-      <line x1="4" y1="34" x2="10" y2="34" strokeWidth={1} />
-      {/* Raios traseiros */}
-      <line x1="44" y1="28" x2="44" y2="34" strokeWidth={1} />
-      <line x1="38" y1="34" x2="44" y2="34" strokeWidth={1} />
-    </svg>
-  )
+const vehicleIconSrc: Record<PricingPlan['icon'], string> = {
+  truck: '/images/icons/truck.png',
+  van: '/images/icons/van.png',
+  motorcycle: '/images/icons/motorcycle.png',
+  car: '/images/icons/car.png',
 }
 
 function VehicleIcon({ type }: { type: PricingPlan['icon'] }) {
-  if (type === 'truck') return <TruckIcon />
-  if (type === 'van') return <VanIcon />
-  if (type === 'motorcycle') return <MotorcycleIcon />
-  return <CarIcon />
+  return (
+    <SmartImage
+      src={vehicleIconSrc[type]}
+      alt=""
+      width={112}
+      height={72}
+      className="h-9 w-auto max-w-[120px] object-contain"
+      placeholderText=""
+      placeholderClassName="w-14 h-9"
+    />
+  )
 }
 
 interface PricingCardProps {
@@ -156,7 +41,7 @@ export default function PricingCard({ plan, onContractClick }: PricingCardProps)
     >
       {/* Ícone + Tipo */}
       <div className="flex flex-col items-center text-center mb-5">
-        <div className="text-camel/60 group-hover:text-camel transition-colors mb-3">
+        <div className="opacity-80 group-hover:opacity-100 transition-opacity mb-3">
           <VehicleIcon type={plan.icon} />
         </div>
         <h3 className="text-white-smoke font-bold text-lg tracking-wide">
