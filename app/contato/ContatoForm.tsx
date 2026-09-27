@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { contatoPagina } from '@/data/siteData'
 import { submitLead } from '@/lib/leads'
+import { trackLead } from '@/lib/tracking'
 
 export default function ContatoForm() {
   const { form } = contatoPagina
@@ -16,18 +17,22 @@ export default function ContatoForm() {
     const fd = new FormData(e.currentTarget)
     setSubmitting(true)
     setError(null)
+    const name = String(fd.get('name') ?? '')
+    const email = String(fd.get('email') ?? '')
+    const phone = String(fd.get('phone') ?? '')
     try {
       await submitLead({
         type: 'contato',
-        name: String(fd.get('name') ?? ''),
-        email: String(fd.get('email') ?? ''),
-        phone: String(fd.get('phone') ?? ''),
+        name,
+        email,
+        phone,
         payload: {
           subject: String(fd.get('subject') ?? ''),
           message: String(fd.get('message') ?? ''),
         },
         honeypot: String(fd.get('company_website') ?? ''),
       })
+      trackLead({ form_name: 'contato', email, phone, first_name: name.split(' ')[0] })
       setSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao enviar. Tente novamente.')

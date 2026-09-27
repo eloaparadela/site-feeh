@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { exitPopupVariants } from '@/data/siteData'
 import SmartImage from '@/components/ui/SmartImage'
 import { submitLead } from '@/lib/leads'
+import { trackLead } from '@/lib/tracking'
 
 const VEHICLE_QUANTITIES = ['01 a 05', '06 a 15', '16 a 50', '51 a 250', 'Mais de 250']
 
@@ -59,12 +60,15 @@ export default function ExitIntentPopup() {
     const fd = new FormData(e.currentTarget)
     setSubmitting(true)
     setError(null)
+    const name = String(fd.get('name') ?? '')
+    const email = String(fd.get('email') ?? '')
+    const phone = String(fd.get('phone') ?? '')
     try {
       await submitLead({
         type: 'orcamento',
-        name: String(fd.get('name') ?? ''),
-        email: String(fd.get('email') ?? ''),
-        phone: String(fd.get('phone') ?? ''),
+        name,
+        email,
+        phone,
         payload: {
           source: 'popup-saida',
           useType,
@@ -72,6 +76,7 @@ export default function ExitIntentPopup() {
         },
         honeypot: String(fd.get('company_website') ?? ''),
       })
+      trackLead({ form_name: 'popup_saida', email, phone, first_name: name.split(' ')[0] })
       setSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao enviar. Tente novamente.')

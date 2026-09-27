@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { sejaParceiroPagina } from '@/data/siteData'
 import { submitLead } from '@/lib/leads'
+import { trackLead } from '@/lib/tracking'
 
 export default function ParceiroForm() {
   const { form } = sejaParceiroPagina
@@ -16,11 +17,13 @@ export default function ParceiroForm() {
     const fd = new FormData(e.currentTarget)
     setSubmitting(true)
     setError(null)
+    const name = String(fd.get('name') ?? '')
+    const phone = String(fd.get('phone') ?? '')
     try {
       await submitLead({
         type: 'parceiro',
-        name: String(fd.get('name') ?? ''),
-        phone: String(fd.get('phone') ?? ''),
+        name,
+        phone,
         payload: {
           company: String(fd.get('company') ?? ''),
           city: String(fd.get('city') ?? ''),
@@ -28,6 +31,7 @@ export default function ParceiroForm() {
         },
         honeypot: String(fd.get('company_website') ?? ''),
       })
+      trackLead({ form_name: 'parceiro', phone, first_name: name.split(' ')[0] })
       setSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao enviar. Tente novamente.')

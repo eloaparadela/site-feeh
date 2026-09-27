@@ -5,3 +5,7 @@ node_modules
 dist
 out
 .DS_Store
+
+# Config privada da Meta CAPI — nunca deve ir para o Git nem para public_html.
+# Faça upload manual pra fora da public_html na Hostinger (ver TRACKING_SETUP.md).
+hostinger-privado/

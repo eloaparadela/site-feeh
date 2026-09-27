@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import SmartImage from '@/components/ui/SmartImage'
 import { heroSlides } from '@/data/siteData'
+import { trackContact } from '@/lib/tracking'
 
 function WhatsAppIcon() {
   return (
@@ -134,6 +135,7 @@ export default function HeroSection() {
             <div className="mt-4 flex flex-nowrap items-center gap-2.5">
               <a
                 href={slide.primaryButtonLink}
+                onClick={() => trackContact({ contact_method: 'quote', cta_name: 'hero_primary', cta_location: 'hero_desktop' })}
                 className="inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap bg-[#B4995A] hover:bg-[#C8AF72] text-[#0F0A0F] font-bold text-[15px] px-6 py-4 rounded shadow-xl shadow-black/50 ring-1 ring-[#B4995A]/60 transition-colors focus-ring"
               >
                 {slide.primaryButtonLabel}
@@ -142,6 +144,7 @@ export default function HeroSection() {
                 href={slide.secondaryButtonLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'hero_whatsapp', cta_location: 'hero_desktop' })}
                 className="inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap bg-[#0F0A0F]/75 backdrop-blur-sm border border-white/40 hover:border-white/70 text-white hover:bg-[#0F0A0F]/90 font-semibold text-[15px] px-5 py-4 rounded shadow-lg shadow-black/40 transition-colors focus-ring"
               >
                 <WhatsAppIcon />
@@ -213,6 +216,7 @@ export default function HeroSection() {
       <div className="md:hidden bg-[#0F0A0F] px-4 pt-1 pb-4 flex flex-col gap-2.5">
         <a
           href={slide.primaryButtonLink}
+          onClick={() => trackContact({ contact_method: 'quote', cta_name: 'hero_primary', cta_location: 'hero_mobile' })}
           className="inline-flex items-center justify-center gap-2 bg-[#B4995A] hover:bg-[#C8AF72] text-[#0F0A0F] font-bold text-[15px] px-6 py-4 rounded shadow-lg shadow-black/50 transition-colors focus-ring w-full"
         >
           {slide.primaryButtonLabel}
@@ -221,6 +225,7 @@ export default function HeroSection() {
           href={slide.secondaryButtonLink}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'hero_whatsapp', cta_location: 'hero_mobile' })}
           className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/40 hover:border-white/60 text-white hover:bg-white/15 font-semibold text-[15px] px-6 py-3.5 rounded transition-colors focus-ring w-full"
         >
           <WhatsAppIcon />

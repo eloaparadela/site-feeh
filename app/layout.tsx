@@ -5,6 +5,9 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import ThemeProvider from '@/components/providers/ThemeProvider'
 import AwayTitleAlert from '@/components/ui/AwayTitleAlert'
+import MetaPixel from '@/components/tracking/MetaPixel'
+import GoogleTags from '@/components/tracking/GoogleTags'
+import TrackingProvider from '@/components/tracking/TrackingProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -45,6 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <MetaPixel />
+        <GoogleTags />
+        <TrackingProvider />
         <ThemeProvider>
           <AwayTitleAlert />
           <Header />

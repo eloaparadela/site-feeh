@@ -1,4 +1,7 @@
+'use client'
+
 import { socialLinks, whatsapp } from '@/data/siteData'
+import { trackContact } from '@/lib/tracking'
 
 interface SocialIconsProps {
   className?: string
@@ -36,6 +39,11 @@ export default function SocialIcons({ className = '', iconClassName = '' }: Soci
           target="_blank"
           rel="noopener noreferrer"
           aria-label={icon.name}
+          onClick={() => {
+            if (icon.name === 'WhatsApp') {
+              trackContact({ contact_method: 'whatsapp', cta_name: 'social_icons_whatsapp', cta_location: 'mobile_menu' })
+            }
+          }}
           className={`
             p-2 rounded transition-colors duration-200
             text-white/70 hover:text-camel

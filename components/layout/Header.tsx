@@ -7,6 +7,7 @@ import { menuLinks, brand } from '@/data/siteData'
 import SocialIcons from '@/components/ui/SocialIcons'
 import MobileMenu from '@/components/layout/MobileMenu'
 import { useTheme } from '@/components/providers/ThemeProvider'
+import { trackContact } from '@/lib/tracking'
 
 function ThemeToggle() {
   const { theme, toggle } = useTheme()
@@ -137,6 +138,7 @@ export default function Header() {
             {/* Botão Orçamento */}
             <a
               href="#orcamento"
+              onClick={() => trackContact({ contact_method: 'quote', cta_name: 'header_orcamento', cta_location: 'header_nav' })}
               className="theme-orcamento-btn font-bold text-sm px-6 py-2.5 rounded-full focus-ring"
             >
               Orçamento
@@ -178,6 +180,11 @@ function SocialIconsThemed() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.name}
+          onClick={() => {
+            if (s.name === 'WhatsApp') {
+              trackContact({ contact_method: 'whatsapp', cta_name: 'header_whatsapp_icon', cta_location: 'header_top' })
+            }
+          }}
           className="theme-social-icon p-2 rounded focus-ring"
         >
           {s.icon}

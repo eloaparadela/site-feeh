@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import SmartImage from '@/components/ui/SmartImage'
 import { brand, footerLinks, whatsapp } from '@/data/siteData'
+import { trackContact } from '@/lib/tracking'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -50,6 +53,7 @@ export default function Footer() {
               href={`https://wa.me/${whatsapp.number}?text=${encodeURIComponent(whatsapp.defaultMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'footer_whatsapp', cta_location: 'footer' })}
               className="inline-flex items-center gap-2 mt-5 text-sm text-[#25D366] hover:text-[#1ebe5d] transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
@@ -119,6 +123,11 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    if (s.label === 'WhatsApp') {
+                      trackContact({ contact_method: 'whatsapp', cta_name: 'footer_social_whatsapp', cta_location: 'footer' })
+                    }
+                  }}
                   className="text-sm theme-text-muted hover:text-[#B4995A] transition-colors"
                 >
                   {s.label}

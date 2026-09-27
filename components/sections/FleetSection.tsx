@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import SmartImage from '@/components/ui/SmartImage'
 import { fleetSlides, fleetSection, whatsapp } from '@/data/siteData'
+import { trackContact } from '@/lib/tracking'
 
 export default function FleetSection() {
   const [current, setCurrent] = useState(0)
@@ -119,6 +120,7 @@ export default function FleetSection() {
               href={slide.ctaLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'fleet_whatsapp', cta_location: 'fleet_section', service_name: 'Gestão de Frota' })}
               className="inline-flex items-center justify-center gap-2 bg-onyx hover:bg-onyx/80 text-white-smoke dark:bg-camel dark:hover:bg-soft-fawn dark:text-onyx font-bold text-sm px-6 py-3 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-camel"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
@@ -128,6 +130,7 @@ export default function FleetSection() {
             </a>
             <a
               href="#orcamento"
+              onClick={() => trackContact({ contact_method: 'quote', cta_name: 'fleet_veja_planos', cta_location: 'fleet_section', service_name: 'Gestão de Frota' })}
               className="inline-flex items-center justify-center gap-2 border-2 border-onyx/80 text-onyx hover:bg-onyx hover:text-white-smoke dark:border-camel dark:text-camel dark:hover:bg-camel dark:hover:text-onyx font-bold text-sm px-6 py-3 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-camel"
             >
               Veja planos

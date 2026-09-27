@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { menuLinks, whatsapp } from '@/data/siteData'
 import SocialIcons from '@/components/ui/SocialIcons'
 import SmartImage from '@/components/ui/SmartImage'
+import { trackContact } from '@/lib/tracking'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -94,7 +95,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <div className="border-t border-camel/10 px-6 py-5 space-y-4">
           <a
             href="#orcamento"
-            onClick={onClose}
+            onClick={() => {
+              trackContact({ contact_method: 'quote', cta_name: 'mobile_menu_orcamento', cta_location: 'mobile_menu' })
+              onClose()
+            }}
             className="block w-full bg-camel hover:bg-soft-fawn text-onyx font-bold text-center py-3 px-4 rounded transition-colors text-sm"
           >
             Orçamento
@@ -103,6 +107,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             href={`https://wa.me/${whatsapp.number}?text=${encodeURIComponent(whatsapp.salesMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'mobile_menu_whatsapp', cta_location: 'mobile_menu' })}
             className="flex items-center justify-center gap-2 w-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 text-center py-3 px-4 rounded transition-colors text-sm font-medium"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
