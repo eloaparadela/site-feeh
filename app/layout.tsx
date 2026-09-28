@@ -8,6 +8,7 @@ import AwayTitleAlert from '@/components/ui/AwayTitleAlert'
 import MetaPixel from '@/components/tracking/MetaPixel'
 import GoogleTags from '@/components/tracking/GoogleTags'
 import TrackingProvider from '@/components/tracking/TrackingProvider'
+import CookieConsent from '@/components/tracking/CookieConsent'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <Footer />
         </ThemeProvider>
+        <CookieConsent />
       </body>
     </html>
   )

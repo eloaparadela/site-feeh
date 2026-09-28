@@ -7,6 +7,7 @@
 // chamam fbq() diretamente — sempre passam por lib/tracking.ts.
 
 import { TRACKING_CONFIG } from './tracking-config'
+import { hasMarketingConsent } from './consent'
 
 declare global {
   interface Window {
@@ -15,8 +16,11 @@ declare global {
   }
 }
 
+// Toda função deste arquivo é travada por hasMarketingConsent() — sem
+// consentimento aceito no banner de cookies, nada é disparado nem
+// enviado à Meta (nem pelo navegador, nem pela CAPI no servidor).
 function fbqReady(): boolean {
-  return typeof window !== 'undefined' && typeof window.fbq === 'function'
+  return hasMarketingConsent() && typeof window !== 'undefined' && typeof window.fbq === 'function'
 }
 
 function getCookie(name: string): string | undefined {
@@ -51,12 +55,25 @@ export function metaContact(params: object) {
 }
 
 /** Lead usa eventID para deduplicar com a chamada equivalente na CAPI (mesmo event_id). */
-export function metaLead(eventId: string, params: Record<string, unknown>) {
+export function metaLead(eventId: string, params: object) {
   if (!fbqReady()) return
   window.fbq!('track', 'Lead', params, { eventID: eventId })
 }
 
-export type MetaCapiEventName = 'Lead' | 'Contact' | 'ViewContent'
+/**
+ * Eventos que NÃO são padrão da Meta (QualifiedLead, Opportunity, Sale)
+ * usam trackCustom em vez de track — é assim que a Meta diferencia
+ * evento padrão de evento com nome próprio do negócio.
+ */
+export function metaCustomEvent(eventName: string, eventId: string, params: object) {
+  if (!fbqReady()) return
+  window.fbq!('trackCustom', eventName, params, { eventID: eventId })
+}
+
+// Lead/Contact/ViewContent são eventos padrão da Meta (track). QualifiedLead,
+// Opportunity e Sale são nomes de negócio (trackCustom) — preparados pra uso
+// futuro, mas hoje NADA no site chama trackQualifiedLead/Opportunity/Sale.
+export type MetaCapiEventName = 'Lead' | 'Contact' | 'ViewContent' | 'QualifiedLead' | 'Opportunity' | 'Sale'
 
 interface MetaCapiInput {
   event_name: MetaCapiEventName
@@ -66,6 +83,8 @@ interface MetaCapiInput {
     email?: string
     phone?: string
     first_name?: string
+    /** ID anônimo do visitante (lib/attribution.ts) — hasheado no PHP antes de ir pra Meta. */
+    external_id?: string
   }
   custom_data?: object
 }
@@ -76,6 +95,7 @@ interface MetaCapiInput {
  * secundária e não pode travar o fluxo principal (formulário, clique).
  */
 export async function sendMetaCapiEvent(input: MetaCapiInput): Promise<void> {
+  if (!hasMarketingConsent()) return
   try {
     await fetch(TRACKING_CONFIG.META_CAPI_ENDPOINT, {
       method: 'POST',

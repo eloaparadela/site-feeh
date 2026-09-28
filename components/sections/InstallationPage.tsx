@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SmartImage from '@/components/ui/SmartImage'
 import { installationPages, pricingPlans, whatsapp } from '@/data/siteData'
 import { trackContact, trackViewContent } from '@/lib/tracking'
+import { normalizeVehicleType } from '@/lib/attribution'
 
 interface InstallationPageProps {
   vehicleId: keyof typeof installationPages
@@ -45,7 +46,7 @@ export default function InstallationPage({ vehicleId }: InstallationPageProps) {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="/#orcamento"
-                onClick={() => trackContact({ contact_method: 'quote', cta_name: 'installation_ver_planos', cta_location: 'installation_hero', service_name: content.vehicleType })}
+                onClick={() => trackContact({ contact_method: 'quote', cta_name: 'installation_ver_planos', cta_location: 'installation_hero', service_name: content.vehicleType, vehicle_type: normalizeVehicleType(content.vehicleType) })}
                 className="inline-flex items-center justify-center bg-[#B4995A] hover:bg-[#C8AF72] text-[#0F0A0F] font-bold text-sm px-6 py-3 rounded transition-colors"
               >
                 Ver planos e preços
@@ -54,7 +55,7 @@ export default function InstallationPage({ vehicleId }: InstallationPageProps) {
                 href={`https://wa.me/${whatsapp.number}?text=${encodeURIComponent(plan?.whatsappMessage ?? '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'installation_whatsapp', cta_location: 'installation_hero', service_name: content.vehicleType })}
+                onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'installation_whatsapp', cta_location: 'installation_hero', service_name: content.vehicleType, vehicle_type: normalizeVehicleType(content.vehicleType) })}
                 className="inline-flex items-center justify-center border border-[#B4995A]/30 hover:border-[#B4995A] theme-text-muted hover:text-[#B4995A] text-sm px-6 py-3 rounded transition-colors"
               >
                 Fale no WhatsApp
@@ -93,7 +94,7 @@ export default function InstallationPage({ vehicleId }: InstallationPageProps) {
           <p className="theme-text-muted text-sm mb-6 max-w-md mx-auto">{content.ctaDescription}</p>
           <a
             href="/#orcamento"
-            onClick={() => trackContact({ contact_method: 'quote', cta_name: 'installation_cta_final', cta_location: 'installation_bottom', service_name: content.vehicleType })}
+            onClick={() => trackContact({ contact_method: 'quote', cta_name: 'installation_cta_final', cta_location: 'installation_bottom', service_name: content.vehicleType, vehicle_type: normalizeVehicleType(content.vehicleType) })}
             className="inline-flex items-center justify-center bg-[#B4995A] hover:bg-[#C8AF72] text-[#0F0A0F] font-bold px-8 py-4 rounded transition-colors"
           >
             Ver planos — a partir de R$ {plan?.monthlyPrice}/mês

@@ -10,6 +10,7 @@
 // mudar nenhum componente do site.
 
 import { TRACKING_CONFIG } from './tracking-config'
+import { hasMarketingConsent } from './consent'
 
 declare global {
   interface Window {
@@ -31,8 +32,11 @@ export const isGoogleAdsConfigured = Boolean(GOOGLE_ADS_ID)
 /** true assim que houver pelo menos um ID do Google configurado — usado pra decidir se carrega o gtag.js. */
 export const shouldLoadGtag = isGA4Configured || isGoogleAdsConfigured
 
+// Assim como o Meta (lib/meta.ts), tudo aqui é travado pelo mesmo
+// consentimento do banner de cookies — vale já hoje (inativo) e quando
+// o GA4/Ads forem ativados no futuro.
 function gtagReady(): boolean {
-  return typeof window !== 'undefined' && typeof window.gtag === 'function'
+  return hasMarketingConsent() && typeof window !== 'undefined' && typeof window.gtag === 'function'
 }
 
 export function ga4PageView() {
@@ -56,6 +60,16 @@ export function ga4Contact(params: object) {
 export function ga4Lead(params: object) {
   if (!isGA4Configured || !gtagReady()) return
   window.gtag!('event', 'generate_lead', params)
+}
+
+/**
+ * Eventos futuros de funil (qualified_lead, opportunity, sale/purchase).
+ * Preparado pra quando o GA4 for ativado — hoje ninguém chama isso
+ * automaticamente (ver trackQualifiedLead/Opportunity/Sale em lib/tracking.ts).
+ */
+export function ga4CustomEvent(eventName: string, params: object) {
+  if (!isGA4Configured || !gtagReady()) return
+  window.gtag!('event', eventName, params)
 }
 
 export function googleAdsLeadConversion() {

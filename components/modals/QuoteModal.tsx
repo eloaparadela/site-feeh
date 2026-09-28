@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { type PricingPlan } from '@/data/siteData'
 import { submitLead } from '@/lib/leads'
 import { trackLead } from '@/lib/tracking'
+import { normalizeVehicleType } from '@/lib/attribution'
 
 const BRAZILIAN_STATES = [
   'AC','AL','AP','AM','BA','CE','DF','ES','GO',
@@ -60,7 +61,14 @@ export default function QuoteModal({ plan, onClose }: QuoteModalProps) {
         },
         honeypot: String(fd.get('company_website') ?? ''),
       })
-      trackLead({ form_name: 'orcamento', email, phone, first_name: name.split(' ')[0] })
+      trackLead({
+        form_name: 'orcamento',
+        email,
+        phone,
+        first_name: name.split(' ')[0],
+        service_name: plan.vehicleType,
+        vehicle_type: normalizeVehicleType(plan.vehicleType),
+      })
       setSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao enviar. Tente novamente.')

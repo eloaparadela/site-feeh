@@ -2,10 +2,11 @@
 /**
  * Prosat — Meta Conversions API endpoint
  *
- * Recebe eventos do navegador (Lead, Contact, ViewContent) e reenvia
- * para a Meta Graph API do lado do servidor, usando o mesmo event_id
- * que o Pixel já disparou no navegador (deduplicação automática pela
- * Meta).
+ * Recebe eventos do navegador (Lead, Contact, ViewContent — e, já
+ * preparado mas não usado automaticamente hoje: QualifiedLead,
+ * Opportunity, Sale) e reenvia para a Meta Graph API do lado do
+ * servidor, usando o mesmo event_id que o Pixel já disparou no
+ * navegador (deduplicação automática pela Meta).
  *
  * A configuração real (Pixel ID + Access Token) NÃO fica neste arquivo
  * nem em qualquer lugar dentro de public_html — fica num arquivo
@@ -70,8 +71,10 @@ if (!is_array($data)) {
     exit;
 }
 
-// ── event_name: só os 3 eventos que usamos ──
-$allowedEvents = ['Lead', 'Contact', 'ViewContent'];
+// ── event_name: allowlist explícita — nada fora daqui passa.
+// QualifiedLead/Opportunity/Sale estão liberados aqui pra quando forem
+// usados no futuro, mas HOJE nenhum código do site os dispara. ──
+$allowedEvents = ['Lead', 'Contact', 'ViewContent', 'QualifiedLead', 'Opportunity', 'Sale'];
 $eventName = isset($data['event_name']) ? (string) $data['event_name'] : '';
 if (!in_array($eventName, $allowedEvents, true)) {
     http_response_code(400);
@@ -113,11 +116,15 @@ $email = prosat_sanitize_text($userDataInput['email'] ?? null, 200);
 $phoneRaw = prosat_sanitize_text($userDataInput['phone'] ?? null, 30);
 $phone = $phoneRaw !== null ? preg_replace('/\D/', '', $phoneRaw) : null;
 $firstName = prosat_sanitize_text($userDataInput['first_name'] ?? null, 100);
+// external_id = visitor_id anônimo (lib/attribution.ts) — não é PII, mas a
+// Meta pede que também vá hasheado, igual em/ph/fn.
+$externalId = prosat_sanitize_text($userDataInput['external_id'] ?? null, 100);
 
 $userData = array_filter([
     'em' => prosat_hash($email),
     'ph' => prosat_hash($phone),
     'fn' => prosat_hash($firstName),
+    'external_id' => prosat_hash($externalId),
     // client_ip_address, client_user_agent, fbp, fbc NÃO são hasheados.
     'client_ip_address' => prosat_sanitize_text($_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? null, 100),
     'client_user_agent' => prosat_sanitize_text($_SERVER['HTTP_USER_AGENT'] ?? null, 300),

@@ -5,6 +5,7 @@ import { whatsapp } from '@/data/siteData'
 import Link from 'next/link'
 import SmartImage from '@/components/ui/SmartImage'
 import { trackContact } from '@/lib/tracking'
+import { normalizeVehicleType } from '@/lib/attribution'
 
 const vehicleIconSrc: Record<PricingPlan['icon'], string> = {
   truck: '/images/icons/truck.png',
@@ -83,7 +84,7 @@ export default function PricingCard({ plan, onContractClick }: PricingCardProps)
         {/* Contrate Online */}
         <button
           onClick={() => {
-            trackContact({ contact_method: 'quote', cta_name: 'pricing_card_contratar', cta_location: 'pricing_card', service_name: plan.vehicleType })
+            trackContact({ contact_method: 'quote', cta_name: 'pricing_card_contratar', cta_location: 'pricing_card', service_name: plan.vehicleType, vehicle_type: normalizeVehicleType(plan.vehicleType) })
             onContractClick(plan)
           }}
           className="w-full bg-camel hover:bg-soft-fawn text-onyx font-bold text-sm py-3 px-4 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-camel"
@@ -96,7 +97,7 @@ export default function PricingCard({ plan, onContractClick }: PricingCardProps)
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'pricing_card_whatsapp', cta_location: 'pricing_card', service_name: plan.vehicleType })}
+          onClick={() => trackContact({ contact_method: 'whatsapp', cta_name: 'pricing_card_whatsapp', cta_location: 'pricing_card', service_name: plan.vehicleType, vehicle_type: normalizeVehicleType(plan.vehicleType) })}
           className="w-full inline-flex items-center justify-center gap-2 border border-[#25D366]/30 hover:border-[#25D366]/60 hover:bg-[#25D366]/5 text-[#25D366] text-sm py-2.5 px-4 rounded transition-colors"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0" aria-hidden="true">
